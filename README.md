@@ -1,6 +1,6 @@
 <p align="center" >
   <img src="https://raw.githubusercontent.com/CocoaLumberjack/CocoaLumberjack/master/LumberjackLogo.png" title="Lumberjack logo" float=left>
-</p>
+</p> 
 
 CocoaLumberjack
 ===============
