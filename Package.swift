@@ -1,4 +1,4 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.10
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "CocoaLumberjack",
     platforms: [
-        .iOS(.v8),
+        .iOS(.v12),
         .macOS(.v10_10),
         .watchOS(.v3),
         .tvOS(.v9),
