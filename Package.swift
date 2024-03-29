@@ -1,3 +1,4 @@
+
 // swift-tools-version:5.10
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
@@ -19,6 +20,12 @@ let package = Package(
         .library(
             name: "CocoaLumberjackSwift",
             targets: ["CocoaLumberjackSwift"]),
+        .library(
+            name: "CocoaLumberjackSwiftLogBackend",
+            targets: ["CocoaLumberjackSwiftLogBackend"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-log.git", from: "1.4.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -30,9 +37,13 @@ let package = Package(
         .target(name: "CocoaLumberjackSwift",
                 dependencies: ["CocoaLumberjack", "CocoaLumberjackSwiftSupport"],
                 exclude: ["Supporting Files"]),
+        .target(name: "CocoaLumberjackSwiftLogBackend",
+                dependencies: ["CocoaLumberjack", .product(name: "Logging", package: "swift-log")]),
         .testTarget(name: "CocoaLumberjackTests",
                     dependencies: ["CocoaLumberjack"]),
         .testTarget(name: "CocoaLumberjackSwiftTests",
-                    dependencies: ["CocoaLumberjackSwift"])
+                    dependencies: ["CocoaLumberjackSwift"]),
+        .testTarget(name: "CocoaLumberjackSwiftLogBackendTests",
+                    dependencies: ["CocoaLumberjackSwiftLogBackend"]),
     ]
 )
